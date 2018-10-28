@@ -50,12 +50,7 @@
                     center:new google.maps.LatLng(21.176946,79.059943),
                     zoom:18,
                     minZoom: 18,
-                    maxZoom: 18,
-                    panControl:false,     
-                    scaleControl:false,
-                    streetViewControl:false,
-                    overviewMapControl:false,
-                    rotateControl:false,    
+                    maxZoom: 18,    
                     zoomControl:false,
                     zoomControlOptions:{style:google.maps.ZoomControlStyle.LARGE },//SMALL LARGE DEFAULT
                     mapTypeControl:true,
@@ -189,10 +184,10 @@
     
             function clearWaypoints() 
             {
-                markers = [];
+                markers.length = 0; //clearing array so as to prevent memory leaks
                 origin = null;
                 destination = null;
-                waypoints = [];
+                waypoints.length = 0; //again, clearing array
                 directionsVisible = false;
             }
     
